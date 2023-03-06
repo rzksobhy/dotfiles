@@ -65,4 +65,9 @@ return packer.startup(function(use)
         "jose-elias-alvarez/null-ls.nvim",
     })
     use("b0o/SchemaStore.nvim")
+    use({
+        "mfussenegger/nvim-dap",
+        "theHamsta/nvim-dap-virtual-text",
+        "rcarriga/nvim-dap-ui",
+    })
 end)

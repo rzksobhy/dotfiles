@@ -10,6 +10,8 @@ luasnip.setup({
     -- enable_autosnippets = true,
 })
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 cmp.setup({
     mapping = {
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
@@ -53,20 +55,18 @@ cmp.setup({
             end
         end),
     },
-
     sources = {
+        { name = "nvim_lua" },
         { name = "luasnip" },
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "buffer", keyword_length = 5 },
     },
-
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
         end,
     },
-
     formatting = {
         format = lspkind.cmp_format(),
     },
@@ -77,19 +77,19 @@ local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
+cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = 'buffer' }
-    }
+        { name = "buffer" },
+    },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-        { name = 'path' }
+        { name = "path" },
     }, {
-        { name = 'cmdline' }
-    })
+        { name = "cmdline" },
+    }),
 })

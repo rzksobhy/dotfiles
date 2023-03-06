@@ -1,13 +1,13 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-   vim.fn.system({
-      "git",
-      "clone",
-      "--depth",
-      "1",
-      "https://github.com/wbthomason/packer.nvim",
-      install_path
-   })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        install_path,
+    })
 end
 
 vim.cmd([[packadd packer.nvim]])
@@ -15,15 +15,15 @@ vim.cmd([[packadd packer.nvim]])
 local packer = require("packer")
 
 packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
+    display = {
+        open_fn = function()
+            return require("packer.util").float({ border = "rounded" })
+        end,
+    },
 })
 
 return packer.startup(function(use)
-    use 'wbthomason/packer.nvim'
+    use("wbthomason/packer.nvim")
     use("lewis6991/impatient.nvim")
     use("nvim-lua/plenary.nvim")
     use("numToStr/Comment.nvim")
@@ -51,11 +51,12 @@ return packer.startup(function(use)
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
+        "hrsh7th/cmp-nvim-lua",
     })
     use({
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
-        "rafamadriz/friendly-snippets"
+        "rafamadriz/friendly-snippets",
     })
     use({
         "neovim/nvim-lspconfig",

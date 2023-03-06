@@ -40,7 +40,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.autowrite = true
 
 vim.opt.termguicolors = true
-vim.opt.updatetime = 49
+vim.opt.updatetime = 50
 
 vim.opt.scrolloff = 7
 vim.opt.sidescrolloff = 9

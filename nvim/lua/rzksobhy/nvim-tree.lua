@@ -8,12 +8,12 @@ require("nvim-tree").setup({
     view = {
         width = {
             min = 30,
-            padding = 2
+            padding = 2,
         },
         float = {
             enable = true,
-        }
-    }
+        },
+    },
 })
 
 nnoremap("<leader>e", ":NvimTreeToggle<CR>")

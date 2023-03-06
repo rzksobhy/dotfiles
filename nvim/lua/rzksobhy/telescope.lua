@@ -1,6 +1,6 @@
 local telescope = require("telescope")
 local themes = require("telescope.themes")
-local fb_actions = require "telescope".extensions.file_browser.actions
+local fb_actions = require("telescope").extensions.file_browser.actions
 
 local nnoremap = require("map").nnoremap
 
@@ -25,7 +25,7 @@ local nnoremap = require("map").nnoremap
 local builtin = require("telescope.builtin")
 
 nnoremap("<C-p>", builtin.git_files)
-nnoremap("<leader>pf", function ()
+nnoremap("<leader>pf", function()
     builtin.find_files()
 end)
 
@@ -39,9 +39,9 @@ nnoremap("<leader>pW", function()
     builtin.grep_string({ search = vim.fn.expand("<cWORD>") })
 end)
 
-nnoremap("<leader>ph", function ()
+nnoremap("<leader>ph", function()
     builtin.help_tags(themes.get_dropdown({
-        previewer = false
+        previewer = false,
     }))
 end)
 

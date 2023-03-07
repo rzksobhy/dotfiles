@@ -33,18 +33,6 @@ keymaps.global = gears.table.join(
     awful.key({ modkey }, "e", function()
         awful.spawn(vars.files)
     end, { description = "open a terminal", group = "launcher" }),
-    awful.key(
-        { modkey, "Control" },
-        "r",
-        awesome.restart,
-        { description = "reload awesome", group = "awesome" }
-    ),
-    awful.key(
-        { modkey, "Shift" },
-        "q",
-        awesome.quit,
-        { description = "quit awesome", group = "awesome" }
-    ),
     awful.key({ modkey }, "r", function()
         awful.spawn("dmenu_run")
     end, { description = "run prompt", group = "launcher" }),
@@ -57,7 +45,14 @@ keymaps.global = gears.table.join(
     end, { description = "decrease audio", group = "audio" }),
     awful.key({}, "XF86AudioMute", function()
         awful.spawn.with_shell("pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    end, { description = "(un)mute", group = "audio" })
+    end, { description = "(un)mute", group = "audio" }),
+
+    awful.key({}, "Print", function ()
+        awful.spawn.with_shell([[maim "$HOME/Pictures/$(date).png"]])
+    end),
+    awful.key({ "Control" }, "Print", function ()
+        awful.spawn.with_shell([[maim | xclip -selection clipboard -t image/png]])
+    end)
 )
 
 for i = 1, 9 do

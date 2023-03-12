@@ -5,9 +5,11 @@ local vnoremap = Remap.vnoremap
 local xnoremap = Remap.xnoremap
 local tnoremap = Remap.tnoremap
 
+nnoremap("<leader>e", ":Ex<CR>")
+
 nnoremap("gq", ":tabclose<CR>")
-nnoremap("[", ":tabnext<CR>")
-nnoremap("]", ":tabprev<CR>")
+nnoremap("g]", ":tabnext<CR>")
+nnoremap("g[", ":tabprev<CR>")
 nnoremap("<C-h>", "<C-w>h")
 nnoremap("<C-j>", "<C-w>j")
 nnoremap("<C-k>", "<C-w>k")

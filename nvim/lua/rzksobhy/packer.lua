@@ -32,9 +32,7 @@ return packer.startup(function(use)
     use("tpope/vim-fugitive")
     use("navarasu/onedark.nvim")
     use("nvim-tree/nvim-web-devicons")
-    use("nvim-lualine/lualine.nvim")
     use("williamboman/mason.nvim")
-    use("nvim-tree/nvim-tree.lua")
     use({
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
@@ -65,9 +63,4 @@ return packer.startup(function(use)
         "jose-elias-alvarez/null-ls.nvim",
     })
     use("b0o/SchemaStore.nvim")
-    use({
-        "mfussenegger/nvim-dap",
-        "theHamsta/nvim-dap-virtual-text",
-        "rcarriga/nvim-dap-ui",
-    })
 end)

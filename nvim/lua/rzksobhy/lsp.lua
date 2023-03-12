@@ -59,6 +59,7 @@ setup("cmake")
 setup("clangd", {
     cmd = {
         "clangd",
+        "--index",
         "--background-index",
         "--pch-storage=memory",
         "--clang-tidy",

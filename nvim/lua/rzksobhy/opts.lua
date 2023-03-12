@@ -6,7 +6,7 @@ vim.opt.colorcolumn = "99"
 vim.opt.wrap = false
 
 vim.opt.isfname:append("@-@")
--- vim.opt.iskeyword:remove("_")
+vim.opt.iskeyword:remove("_")
 
 local indent_width = 4
 vim.opt.tabstop = indent_width
@@ -42,8 +42,8 @@ vim.opt.autowrite = true
 vim.opt.termguicolors = true
 vim.opt.updatetime = 50
 
-vim.opt.scrolloff = 7
-vim.opt.sidescrolloff = 9
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
 vim.g.netrw_banner = 0
 

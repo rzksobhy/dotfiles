@@ -5,5 +5,6 @@ null_ls.setup({
     sources = {
         formatting.stylua,
         formatting.black,
+        formatting.cmake_format,
     },
 })

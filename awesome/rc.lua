@@ -3,6 +3,7 @@ pcall(require, "luarocks.loader")
 
 local gears = require("gears")
 local beautiful = require("beautiful")
+local awful = require("awful")
 
 -- awesome builtin
 require("awful.autofocus")
@@ -23,3 +24,5 @@ local keymaps = require("keymaps")
 local buttons = require("buttons")
 root.keys(keymaps.global)
 root.buttons(buttons.global)
+
+awful.spawn.with_shell("setxkbmap -layout us,ara -option grp:alt_shift_toggle")
